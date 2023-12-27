@@ -1,0 +1,17 @@
+{
+  "name": "videochat",
+  "version": "1.0.0",
+  "description": "video chat application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "moden3 (https://github.com/moden3)",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

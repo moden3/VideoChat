@@ -1,0 +1,286 @@
+/********** Base Layouts **********/
+* {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+html{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  /*font-size: 80%;*/
+}
+
+body{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 1px;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+header {
+  grid-area: 1 / 1 / 2 / 2;
+  display: grid;
+  padding: 4px;
+  grid-auto-flow: column;
+  align-items: start;
+  justify-content: space-between;
+  background-color: #30a030;
+  color: #ffffff;
+}
+
+header > div > header_title {
+  display: block;
+  height: fit-content;
+  font-weight: bold;
+  font-size: 140%;
+}
+
+header > header_list {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  column-gap: 4px;
+}
+
+header > header_list > hli {
+  height: fit-content;
+  max-width: fit-content;
+  overflow: auto;
+  background-color: #207020;
+  border: solid 1px #004000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header > header_list > hli > select {
+  width: auto;
+  border: 1px solid;
+  font-size: 60%;
+}
+
+roomcontent {
+  grid-area: 2 / 1 / 3 / 2;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: minmax(300px, 3fr) minmax(100px, 1fr);
+  overflow: hidden;
+}
+
+main {
+  grid-area: 1 / 1 / 2 / 2;
+  padding: 5px;
+  border: solid 1px #30a030;
+  overflow: auto;
+}
+
+side{
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 5px;
+  border: solid 1px #30a030;
+  overflow: auto;
+}
+
+/********** Contents **********/
+Custombtn1{
+  display: flex;
+  position: relative;
+  max-width: fit-content;
+  width: 100%;
+  margin: 5px;
+  padding: 0px;
+  border: solid 1px #000000;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+custombtn1 > .BtnOn {
+  position: relative;
+  background: #30a030;
+  margin: 0;
+  padding: 3px 10px;
+  color: #ffffff;
+  font-weight: bold;
+}
+custombtn1 > .BtnOff {
+  position: relative;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 3px 10px;
+  color: #000000;
+  border: solid 1px #d0d0d0;
+  font-weight: lighter;
+}
+
+/********** Template Layouts **********/
+
+h2 {
+  padding: 1rem 1rem;
+  border-left: 8px solid #30a030;
+  background: hsl(0, 0%, 95%);
+}
+
+h3 {
+  position: relative;
+  margin: 15px 0px;
+  border-bottom: 2px solid #30a030;
+}
+
+.note {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+  padding: 23px 10px 7px;
+  max-width: fit-content;
+  color: #000000;
+  background: hsl(241, 59%, 97%);
+}
+
+.note .note-title {
+  position: absolute;
+  max-width: fit-content;
+  top: -2px;
+  left: -2px;
+  padding: 0 6px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 15px;
+  background: #30a030;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.box1 {
+  display: block;
+  max-width: fit-content;
+  padding: 0.5em 1em;
+  border: 2px solid #eeeeee;
+  position: relative;
+  z-index: 0;
+}
+
+.box1::before {
+  display: block;
+  border-top: 2px solid #c6d4c6;
+  border-left: 2px solid #c6d4c6;
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.box2 {
+  display: block;
+  max-width: fit-content;
+  padding: 0.5em 1em;
+  position: relative;
+}
+
+.box2::after,
+.box2::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  width: 0.75em;
+}
+
+.box2::before {
+  border-bottom: 1px solid #30a030;
+  border-left: 1px solid #30a030;
+  border-top: 1px solid #30a030;
+  bottom: 0;
+  left: 0;
+}
+
+.box2::after {
+  border-bottom: 1px solid #30a030;
+  border-right: 1px solid #30a030;
+  border-top: 1px solid #30a030;
+  bottom: 0;
+  right: 0;
+}
+
+quotedoc {
+  display: block;
+  position: relative;
+  max-width: fit-content;
+  padding: 15px 10px 10px 15px;
+  border-left: 3px double #30a030;
+}
+
+.boxdetails {
+  display: block;
+  max-width: fit-content;
+  padding: 4px;
+  margin: 6px 0px;
+  border: 1px solid #30a030;
+  border-radius: 5px;
+}
+
+.boxdetails > summary {
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #30a030;
+}
+
+.table1 {  
+  display: block;
+  max-width: fit-content;
+  table-layout: auto;
+  overflow: auto;
+  white-space: nowrap;
+  /*width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all;*/
+  font-size: 80%;
+  text-align: center;
+  color: #000000;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table1 th {
+  border: solid 0.5px #6f706f;
+  background: #30a030;
+  color: #ffffff;
+}
+.table1 td {
+  border: solid 0.5px #6f706f;
+  background: hsl(241, 59%, 98%);
+}
+.table1 caption {
+  display: block;
+  font-size: 140%;
+  padding-bottom: 0;
+  color: #30a030;
+  font-weight: bold;
+}
+._sticky{
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+code {
+  word-wrap: normal;
+  color: #444444;
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+pre {
+  border-radius: 5px;
+  color: #444444;
+  background: #f0f0f0;
+  border: solid 1px #dddddd;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}

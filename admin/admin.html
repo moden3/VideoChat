@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="none" />
+    <title>Auth Page</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <header_title>Administrator Page</header_title>
+        <button id="LogoutBtn">Log Out</button>
+      </div>
+      <header_list>
+        <hli id="MyNameBtn">
+          <small>your Name<br></small>
+          <b><span id="MyName"></span></b>
+        </hli>
+        <hli id="MyRoomBtn">
+          <small>your Room<br></small>
+          <b><span id="MyRoom"></span></b><br>
+          <div id="RoomDetails" style="font-size:80%">
+            Pass: <b id="RoomPass">None</b>
+            <table id="RoomList" class="table1"></table>
+          </div>
+        </hli>
+      </header_list>
+    </header>
+    
+    <roomcontent>
+      <main>
+        <h3>Connected Users List</h3>
+        <table id="userslist" class="table1" style="white-space:nowrap;"></table>
+        <h3>Server Polling</h3>
+        <custombtn1 id="PollingBtn">
+          <span id="PollingOn">On</span>
+          <span id="PollingOff">Off</span>
+        </custombtn1>
+        <div id="PollingLog"></div>
+        <div id="SartServerLog"></div>
+      </main>
+      <side></side>
+    </roomcontent>
+    
+    <script src="./script.js"></script>
+  </body>
+</html>

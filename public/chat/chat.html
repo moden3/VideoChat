@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="none" />
+    <title>Original Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <header_title>Room Chat</header_title>
+        <button id="LogoutBtn">Log Out</button>
+      </div>
+      <header_list>
+        <hli id="MyNameBtn">
+          <small>your Name<br></small>
+          <b><span id="MyName"></span></b>
+        </hli>
+        <hli id="MyRoomBtn">
+          <small>your Room<br></small>
+          <b><span id="MyRoom"></span></b><br>
+          <div id="RoomDetails" style="font-size:80%">
+            Pass: <b id="RoomPass">None</b>
+            <table id="RoomList" class="table1"></table>
+          </div>
+        </hli>
+      </header_list>
+    </header>
+    
+    <roomcontent>
+      <main>
+        <div id="video-grid"></div>
+      </main>
+      <side style="font-size:80%">
+        <inputfield>
+          <input id="msgtxt" type="text" style="display:inline;" />
+          <input id="subbtn" type="submit" value="Send" />
+        </inputfield>
+        <div id="chatfield">
+          <button id="chatlogbtn" style="display:none;">Load old logs</button>
+        </div>
+      </side>
+    </roomcontent>
+    
+    <script src="./auth.js"></script>
+  </body>
+</html>
